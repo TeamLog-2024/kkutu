@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wordsheet</title>
+    <link rel="stylesheet" href="{% static 'word.css' %}">
+</head>
+<body>
+    {% for i in words %}
+    <p id="word">{{i.word}}</p>
+    <p id="mean">{{i.mean}}</p>
+    <hr>
+    {% endfor %}
+    <br>
+    <a href="{% url 'main' %}"><button>돌아가기</button></a>
+</body>
+</html>

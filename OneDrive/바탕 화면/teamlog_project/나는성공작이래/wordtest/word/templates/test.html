@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Test</title>
+    <link rel="stylesheet" href="{% static 'test.css' %}">
+    <script src="{% static 'test.js' %}"></script>
+</head>
+<a>
+    {% for i, j in words.items %}
+    <p class="meanQ"><span>{{j | add:1}}. </span>{{i.word}}</p>
+    <p class="meanAnswer">{{i.mean}}</p>
+    <input class="meanA" placeholder="mean">
+    <button onclick="meanCheck('{{j}}')" type="button">채점</button>
+    <br>
+    <hr>
+    {% endfor %}
+    {% for i, j in means.items %}
+    <p class="wordQ"><span>{{j | add:1}}. </span>{{i.mean}}</p>
+    <p class="wordAnswer">{{i.word}}</p>
+    <input class="wordA" placeholder="word">
+    <button onclick="wordCheck('{{j}}')" type="button">채점</button>
+    <br>
+    <hr>
+    {% endfor %}
+    <br>
+    <a href="{% url 'main' %}"><button>돌아가기</button></a>
+</body>
+</html>
