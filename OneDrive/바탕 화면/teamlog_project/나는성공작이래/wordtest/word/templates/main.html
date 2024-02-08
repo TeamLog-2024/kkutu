@@ -1,0 +1,19 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Page</title>
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+</head>
+<body>
+    <a href="{% url 'crawling' %}"><button>단어 가져오기</button></a>
+    <br>
+    <br>
+    <a href="{% url 'word' %}"><button>단어장 보기</button></a>
+    <br>
+    <br>
+    <a href="{% url 'test' %}"><button>단어시험 보기</button></a>
+</body>
+</html>
